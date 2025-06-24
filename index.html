@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explora Huancayo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/jpg" href="favicon.jpg" />
+</head>
+<body>
+  <header class="primary-header">
+    <div class="container">
+      <h1 class="logo">Explora Huancayo</h1>
+      <nav>
+        <ul class="nav">
+          <li><button class="nav-btn" data-section="home">Inicio</button></li>
+          <li><button class="nav-btn" data-section="destinos">Destinos</button></li>
+          <li><button class="nav-btn" data-section="gastronomia">Gastronomía</button></li>
+          <li><button class="nav-btn" data-section="equipo">Conócenos</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section id="home" class="section active">
+      <div class="container">
+        <h2>Bienvenido a Huancayo</h2>
+        <p>Explora la magia de los Andes. Vive su historia, cultura, paisajes y deliciosa gastronomía en una ciudad vibrante.</p>
+        <img src="images/huancayo-home.jpg" alt="Vista panorámica de Huancayo" />
+      </div>
+    </section>
+
+    <section id="destinos" class="section">
+      <div class="container">
+        <h2>Destinos turísticos</h2>
+        <div class="cards">
+          <div class="card">
+            <img src="images/laguna.jpg" alt="Laguna de Paca" />
+            <h3>Laguna de Paca - Jauja(Por peticion de mattias)</h3>
+            <p>Ideal para paseos en bote y disfrutar la tranquilidad andina(Vuelvo a recalcar, es de JAUJA, no huancayo)</p>
+          </div>
+          <div class="card">
+            <img src="images/torretorre.jpg" alt="Torre Torre" />
+            <h3>Torre Torre</h3>
+            <p>Formaciones geológicas únicas perfectas para caminatas y fotos.</p>
+          </div>
+          <div class="card">
+            <img src="images/ocopa.jpg" alt="Convento de Ocopa" />
+            <h3>Convento de Ocopa</h3>
+            <p>Un monasterio histórico con biblioteca y museo colonial.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gastronomia" class="section">
+      <div class="container">
+        <h2>Gastronomía típica</h2>
+        <div class="cards">
+          <div class="card">
+            <img src="images/pachamanca.jpg" alt="Pachamanca" />
+            <h3>Pachamanca</h3>
+            <p>Cocida bajo tierra con piedras calientes, una tradición ancestral.</p>
+          </div>
+          <div class="card">
+            <img src="images/cuy.jpg" alt="Picante de Cuy" />
+            <h3>Cuy Chactado</h3>
+            <p>Plato típico preparado con cuy frito, ajíes y papas doradas.</p>
+          </div>
+          <div class="card">
+            <img src="images/papa.jpg" alt="Picante de Cuy" />
+            <h3>Papa a la Huancaina</h3>
+            <p> Consiste en papas sancochadas (hervidas) cubiertas con una cremosa salsa a base de queso fresco, ají amarillo, leche y galletas o pan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="equipo" class="section">
+      <div class="container">
+        <h2>Conócenos</h2>
+        <p>Somos un grupo de estudiantes apasionados por la cultura de Huancayo y comprometidos con dar a conocer sus riquezas turísticas y gastronómicas a través de un sitio web accesible y educativo.</p>
+        <img src="images/equipo.jpg" alt="Equipo de trabajo" />
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const buttons = document.querySelectorAll(".nav-btn");
+    const sections = document.querySelectorAll(".section");
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const target = btn.getAttribute("data-section");
+
+        sections.forEach((section) => {
+          section.classList.remove("active");
+        });
+
+        document.getElementById(target).classList.add("active");
+      });
+    });
+  </script>
+</body>
+</html>
